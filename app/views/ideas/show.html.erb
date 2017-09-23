@@ -22,11 +22,21 @@
 <ul>
 	<% @idea.ratings.each do |rating| %>
 
-	<li><%= rating.score %></li>
+	<li>
+
+		<%= rating.score %>
+		<% rating.score.times do %>
+		<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+		<% end %>
+	</li>
 	<% end %>
 </ul>
 <% if @idea.ratings.count != 0 %>
 <p>Average</p>
 <%= @idea.average_rating%>
+
+<% @idea.average_rating.times do %>
+		<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+		<% end %>
 
 <% end %>
