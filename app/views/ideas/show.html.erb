@@ -25,5 +25,8 @@
 	<li><%= rating.score %></li>
 	<% end %>
 </ul>
+<% if @idea.ratings.count != 0 %>
 <p>Average</p>
 <%= @idea.average_rating%>
+
+<% end %>
