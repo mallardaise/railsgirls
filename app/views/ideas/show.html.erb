@@ -17,3 +17,13 @@
 
 <%= link_to 'Edit', edit_idea_path(@idea) %> |
 <%= link_to 'Back', ideas_path %>
+<%= link_to 'Add Rating', new_rating_path %>
+
+<ul>
+	<% @idea.ratings.each do |rating| %>
+
+	<li><%= rating.score %></li>
+	<% end %>
+</ul>
+<p>Average</p>
+<%= @idea.average_rating%>
